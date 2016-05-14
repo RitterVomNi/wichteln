@@ -12,14 +12,14 @@
       <tr>
         <td><%= user.name %></td>
         <% if user.spender.nil? %>
-            <td>Ja</td>
-            <% else %>
             <td>Nein</td>
+            <% else %>
+            <td>Ja</td>
             <% end %>
         <% if user.opfer.nil? %>
-            <td>Ja</td>
-        <% else %>
             <td>Nein</td>
+        <% else %>
+            <td>Ja</td>
         <% end %>
       </tr>
   <% end %>

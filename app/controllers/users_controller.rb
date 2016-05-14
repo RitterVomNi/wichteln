@@ -30,7 +30,11 @@ class UsersController < ApplicationController
     end
     @user.update(opfer: @opfer.name)
     @opfer.update(spender: @user.name)
+    
+    if email != nil
     UserMailer.schicken(@user.name, @opfer.name, email).deliver
+    end
+
   end
 
   # GET /users/new
