@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   root 'users#index'
   post 'show' => 'users#show'
   get 'wichtel' => 'users#wichtel'
-
+  get 'fertig' => 'users#fertig'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

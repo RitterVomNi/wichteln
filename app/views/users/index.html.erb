@@ -2,31 +2,6 @@
 <div style="margin-left:40%; margin-top:20%">
   <h1>Meiers Weihnachswichteln</h1>
 
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Last</th>
-        <th>Spender</th>
-        <th>Opfer</th>
-      </tr>
-    </thead>
-
-    <tbody>
-      <% @users.each do |user| %>
-        <tr>
-          <td><%= user.name %></td>
-          <td><%= User.find(user.last).name %></td>
-          <td><%= user.spender %></td>
-          <td><%= user.opfer %></td>
-          <td><%= link_to 'Show', user %></td>
-          <td><%= link_to 'Edit', edit_user_path(user) %></td>
-          <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
-
   <%= form_tag("/wichtel", method: "get") do %>
       <div style="color:black">
       <%= label_tag(:name, "Mein Name:") %>

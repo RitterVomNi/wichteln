@@ -1,0 +1,27 @@
+<table style="border: 1px solid">
+  <thead>
+  <tr>
+    <th>Name</th>
+    <th>Spender</th>
+    <th>Opfer</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @users.each do |user| %>
+      <tr>
+        <td><%= user.name %></td>
+        <% if user.spender.nil? %>
+            <td>Ja</td>
+            <% else %>
+            <td>Nein</td>
+            <% end %>
+        <% if user.opfer.nil? %>
+            <td>Ja</td>
+        <% else %>
+            <td>Nein</td>
+        <% end %>
+      </tr>
+  <% end %>
+  </tbody>
+</table>
