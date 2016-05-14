@@ -18,7 +18,7 @@ Rails.application.configure do
       domain:               'herokuapp.com',
       user_name:            'heinen.m30@gmail.com',
       password:             'Google1182',
-      authentication:       'login',
+      authentication:       'plain',
       enable_starttls_auto: true  }
 
   # Eager load code on boot. This eager loads most of Rails and
