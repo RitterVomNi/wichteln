@@ -5,7 +5,7 @@ Rails.application.configure do
   config.cache_classes = true
 
 
-  config.action_mailer.default_url_options = { host: 'thawing-eyrie-45687.herokuapp.com/' }
+  config.action_mailer.default_url_options = { host: 'thawing-eyrie-45687.herokuapp.com' }
 
   config.action_mailer.perform_deliveries = true
   #config.action_mailer.raise_delivery_errors = false
@@ -18,7 +18,7 @@ Rails.application.configure do
       domain:               'herokuapp.com',
       user_name:            'heinen.m30@gmail.com',
       password:             'Google1182',
-      authentication:       'plain',
+      authentication:       'login',
       enable_starttls_auto: true  }
 
   # Eager load code on boot. This eager loads most of Rails and
