@@ -1,5 +1,6 @@
 class UserMailer < ApplicationMailer
-  default from: "weihnachtsmann@nordpol.de"
+
+  default from: "weihnachtsmann"
   def schicken(user, name, email)
     @user = user
     @name = name
