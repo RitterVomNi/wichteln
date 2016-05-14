@@ -29,8 +29,9 @@
   <%= form_tag("/wichtel", method: "get") do %>
       <div style="color:black">
       <%= label_tag(:name, "Mein Name:") %>
-      <%= text_field_tag(:name) %>
-        </div>
+      <%= select_tag(:name, options_from_collection_for_select(@users, "name", "name")) %>
+      </div>
+
       <div style="color:black">
         <%= label_tag(:email, "Mein Email:") %>
         <%= text_field_tag(:email) %>
