@@ -6,9 +6,9 @@
     <thead>
       <tr>
         <th>Name</th>
-        <th>Email</th>
         <th>Last</th>
-        <th colspan="3"></th>
+        <th>Spender</th>
+        <th>Opfer</th>
       </tr>
     </thead>
 
@@ -16,8 +16,9 @@
       <% @users.each do |user| %>
         <tr>
           <td><%= user.name %></td>
-          <td><%= user.email %></td>
-          <td><%= user.last %></td>
+          <td><%= User.find(user.last).name %></td>
+          <td><%= user.spender %></td>
+          <td><%= user.opfer %></td>
           <td><%= link_to 'Show', user %></td>
           <td><%= link_to 'Edit', edit_user_path(user) %></td>
           <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>

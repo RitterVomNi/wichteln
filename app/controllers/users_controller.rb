@@ -15,6 +15,7 @@ class UsersController < ApplicationController
 
   def wichtel
     @user = User.find_by(name: params[:name])
+    email = params[:email]
 
     rdy = true
 
@@ -24,8 +25,9 @@ class UsersController < ApplicationController
           rdy=false
         end
     end
-
-
+    @user.update(opfer: @opfer.name)
+    @opfer.update(spender: @user.name)
+    UserMailer.schicken(@user.name, @opfer.name, email).deliver
   end
 
   # GET /users/new
