@@ -22,18 +22,23 @@ class UsersController < ApplicationController
 
     rdy = true
 
-    while rdy do
-      @opfer = User.all.shuffle[0]
+    if @user.opfer.nil?
+      while rdy do
+        @opfer = User.where(spender: nil).shuffle[0]
         if @opfer.spender == nil and @opfer.name != @user.name
           rdy=false
         end
-    end
-    @user.update(opfer: @opfer.name)
-    @opfer.update(spender: @user.name)
+      end
+      @user.update(opfer: @opfer.name)
+      @opfer.update(spender: @user.name)
 
-    if email != nil and email != ""
-    UserMailer.schicken(@user.name, @opfer.name, email).deliver
+      if email != nil and email != ""
+        UserMailer.schicken(@user.name, @opfer.name, email).deliver
+      end
+    else
+      format.html { redirect_to index, notice: 'Du hast schon <%= @user.opfer %> gezogen!' }
     end
+
 
   end
 
