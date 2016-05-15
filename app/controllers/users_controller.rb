@@ -36,7 +36,7 @@ class UsersController < ApplicationController
         UserMailer.schicken(@user.name, @opfer.name, email).deliver
       end
     else
-      redirect_to index_path, notice: 'Du hast schon gezogen!'
+      redirect_to root_url, notice: 'Du hast schon gezogen!'
     end
 
 
