@@ -36,7 +36,7 @@ class UsersController < ApplicationController
         UserMailer.schicken(@user.name, @opfer.name, email).deliver
       end
     else
-      format.html { redirect_to index, notice: 'Du hast schon <%= @user.opfer %> gezogen!' }
+      format.html { render :index, notice: 'Du hast schon <%= @user.opfer %> gezogen!' }
     end
 
 
