@@ -33,7 +33,7 @@ class UsersController < ApplicationController
       @opfer.update(spender: @user.name)
 
       if email != nil and email != ""
-        UserMailer.schicken(@user.name, @opfer.name, email).deliver
+    #    UserMailer.schicken(@user.name, @opfer.name, email).deliver
       end
     else
       redirect_to root_url, notice: 'Du hast schon gezogen!'

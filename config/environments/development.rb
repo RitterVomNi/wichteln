@@ -38,7 +38,7 @@ Rails.application.configure do
 
   config.action_mailer.default_url_options = { host: 'smtp.gmail.com' }
 
-  config.action_mailer.perform_deliveries = true
+  config.action_mailer.perform_deliveries = false
   #config.action_mailer.raise_delivery_errors = false
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.default_options = {from: 'Fachschaft Wirtschaft'}
@@ -47,8 +47,8 @@ Rails.application.configure do
       address:              'smtp.gmail.com',
       port:                 587,
       domain:               'gmail.com',
-      user_name:            'heinen.m30@gmail.com',
-      password:             'Google1182',
+      user_name:            '',
+      password:             '',
       authentication:       'plain',
       enable_starttls_auto: true  }
 
